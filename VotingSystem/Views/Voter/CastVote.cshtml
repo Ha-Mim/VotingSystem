@@ -1,0 +1,35 @@
+﻿@using VotingSystem.Models
+
+@{
+    ViewBag.Title = "CastVote";
+}
+
+<h2>CastVote</h2>
+@if (ViewBag.Msg != null)
+{
+    <p class="alert-success">@ViewBag.Msg</p>
+}
+@if (ViewBag.error != null)
+{
+    <p class="alert-danger">@ViewBag.error</p>
+}
+<form method="POST">
+    <div>
+        @Html.Label("Voter Id")
+        @Html.TextBox("voterId")
+    </div>
+    <div>
+        @Html.Label("Select symbol of candidate")
+        <select class="form-control" id="candidateId" name="candidateId">
+            <option></option>
+            @foreach (Candidate item in ViewBag.Candidate)
+            {
+
+                <option value=@item.Id>@item.Symbol</option>
+
+            }
+        </select>
+
+    </div>
+    <input type="submit" value="Cast"/>
+</form>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<VotingSystem.Models.Candidate>
+
+@{
+    ViewBag.Title = "ViewResult";
+}
+
+<h2>ViewResult</h2>
+
+
+<table class="table">
+    <tr>
+        
+        <td>
+            @Html.Label("Symbol of candidate")
+        </td>
+        <td>
+            @Html.Label("Name of candidate")
+        </td>
+        <td>
+            @Html.Label("Status")
+        </td>
+        <td>
+            @Html.Label("No of votes")
+        </td>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.Symbol
+        </td>
+        <td>
+            @item.Name
+        </td>
+        <td>
+            @item.Status
+        </td>
+        <td>
+            @item.NoOfVotes
+        </td>
+    </tr>
+}
+
+</table>
